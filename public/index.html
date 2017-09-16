@@ -19,8 +19,25 @@
         <div class="chatcontrols">
             <input type="text" placeholder="Yes?">
             <!--span class="button">Ok</span-->
+
+            <audio src="test.mp3" loop></audio>
         </div>
     </div>
+
+
+
+    <script>
+        theInput = document.querySelector('.chatcontrols input');
+        theParty = document.querySelector('.chatcontrols audio');
+
+        theInput.addEventListener('focus', function(e) {
+            theParty.play();
+        });
+
+        theInput.addEventListener('blur', function(e) {
+            theParty.pause();
+        });
+    </script>
 
 </body>
 </html>
