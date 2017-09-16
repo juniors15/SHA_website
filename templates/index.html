@@ -23,6 +23,7 @@
 
 
         <form action="/get/stop" method="post">
+
             <fieldset id="field-title">
                 <select>
                     <option selected>Mr.</option>
@@ -99,11 +100,12 @@
                 <a href="#field-confirm">></a>
             </fieldset>
 
-            <fieldset id="field-bankaccount">
+            <fieldset id="field-confirm">
                 
-                <h7 contenteditable>Back account</h7>
-                <a href="#field-confirm">></a>
+                
+                <button>Perfect!</button>
             </fieldset>
+
 
 
 
@@ -223,9 +225,9 @@
         closeOverlay.addEventListener("mouseover", move, false);
 
         function move() {
-        closeOverlay.style.left = Math.floor(Math.random()*(browserWidth-buttonWidth)) + "px";
-        closeOverlay.style.top = Math.floor(Math.random()*(browserHeight-buttonHeight)) + "px";
-    }
+            closeOverlay.style.left = Math.floor(Math.random()*(browserWidth-buttonWidth)) + "px";
+            closeOverlay.style.top = Math.floor(Math.random()*(browserHeight-buttonHeight)) + "px";
+        }
     </script>
 
 </body>
