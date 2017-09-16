@@ -22,7 +22,7 @@
         </p>
 
 
-        <form>
+        <form action="/get/stop" method="post">
             <fieldset id="field-title">
                 <select>
                     <option selected>Mr.</option>
@@ -35,13 +35,68 @@
                 
                 <h7 contenteditable>First name</h7>
 
-
                 <a href="#field-lastname">></a>
             </fieldset>
 
             <fieldset id="field-lastname">
                 
                 <h7 contenteditable>Last name</h7>
+                <a href="#field-birthday">></a>
+            </fieldset>
+
+            <fieldset id="field-birthday">
+                
+                <h7 contenteditable>Birthday</h7>
+                <a href="#field-age">></a>
+            </fieldset>
+
+            <fieldset id="field-age">
+                
+                <h7 contenteditable>Age</h7>
+                <a href="#field-address">></a>
+            </fieldset>
+
+
+            <fieldset id="field-address">
+                
+                <h7 contenteditable>Address</h7>
+                <a href="#field-number">></a>
+            </fieldset>
+
+            <fieldset id="field-number">
+                
+                <h7 contenteditable>Number</h7>
+                <a href="#field-postalcode">></a>
+            </fieldset>
+
+            <fieldset id="field-postalcode">
+                
+                <h7 contenteditable>Postal Code</h7>
+                <a href="#field-city">></a>
+            </fieldset>
+
+            <fieldset id="field-city">
+                
+                <h7 contenteditable>City</h7>
+                <a href="#field-state">></a>
+            </fieldset>
+            
+            <fieldset id="field-state">
+                
+                <h7 contenteditable>State</h7>
+                <a href="#field-country">></a>
+            </fieldset>
+
+            <fieldset id="field-country">
+                
+                <h7 contenteditable>Country</h7>
+                <a href="#field-bankaccount">></a>
+            </fieldset>
+
+            <fieldset id="field-bankaccount">
+                
+                <h7 contenteditable>Back account</h7>
+                <a href="#field-confirm">></a>
             </fieldset>
 
 
@@ -58,7 +113,7 @@
 
     <div class="chat">
         <div class="chatmessage">
-            <p class="text"> {{answer|safe}} </p>
+            <p class="chattext"> {{answer|safe}} </p>
 
             {%if buttonIsHere %}
             <span class="button button-yes">Yes</span>
@@ -83,7 +138,7 @@
 
 
     <script>
-        var theMessage = document.querySelector('.chatmessage'), 
+        var theMessage = document.querySelector('.chattext'), 
             theChat = document.querySelector('.chat'),
             browserWidth = window.innerWidth || document.documentElement.clientWidth,
             browserHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -92,7 +147,6 @@
         domtoimage.toJpeg(theMessage, { quality: 0.9, bgcolor: 'white' })
                 .then(function (dataUrl) {
                     var img = new Image();
-                    img.classList.add('hi');
                     img.src = dataUrl;
                     theChat.appendChild(img);
 
