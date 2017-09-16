@@ -1,6 +1,6 @@
 .chat {
 	position: relative;
-	height: 80vh;
+	height: 70vh;
 	width: 50vw;
 	margin: auto;
 
@@ -9,6 +9,10 @@
 	color: black;
 	border-radius: 10px;
 	overflow: hidden;
+
+	&:focus-within {
+		//animation: flicker .001s 0s infinite;
+	}
 
 }
 
@@ -56,3 +60,10 @@
   0%   { border: 10px solid red; background-color: black;  color: white;}
   100% { border: 10px solid transparent; }
 }
+
+@-webkit-keyframes flicker {
+  0%   { background-color: rgba(white, .8);}
+  50% { }
+}
+
+
