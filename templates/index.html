@@ -8,6 +8,7 @@
 	<title>Stupid!</title>
 
 	<link rel="stylesheet" href="./css/style.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 	<script src="./dom-to-image.js"></script>
 </head>
@@ -63,7 +64,7 @@
 
 
         theInput.addEventListener('keyup', function(e) {
-            if(e.keyCode == 13){
+            if(e.keyCode == 27){
                 e.preventDefault();
                 handleSubmit(e.target);  
             }
@@ -87,8 +88,7 @@
 
 
         function handleSubmit(theTarget) {
-            window.location('/get/'+theTarget.value);
-            
+            window.location('/get/'+theTarget.value); 
         }
     </script>
 
