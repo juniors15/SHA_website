@@ -9,13 +9,13 @@
 
 	<link rel="stylesheet" href="./css/style.min.css">
 
-	<script src="./dom-to-image.js" />
+	<script src="./dom-to-image.js"></script>
 </head>
 
 
     <div class="chat">
         <div class="chatmessage">
-            <p>Do you want the left one or the yellow one?</p>
+            <p class="text">Do you want the left one or the yellow one?</p>
 
             <span class="button">Yes</span>
             <span class="button">👍</span>
@@ -37,6 +37,20 @@
 
 
     <script>
+        var node = document.querySelector('.chatmessage');
+        console.log(node);
+
+        domtoimage.toJpeg(node, { quality: 0.9, bgcolor: 'white' })
+                .then(function (dataUrl) {
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+                })
+                .catch(function (error) {
+                    console.error('oops, something went wrong!', error);
+                });
+
+
         theInput = document.querySelector('.chatcontrols input');
 
 
@@ -65,7 +79,7 @@
 
 
         function handleSubmit(theTarget) {
-
+            fetch('/get/'+theTarget.value);
             console.log(theTarget.value);
         }
     </script>
