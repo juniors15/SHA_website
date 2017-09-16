@@ -26,6 +26,17 @@
 	&:target {
 		display: block;
 	}
+
+
+	a:last-child {
+		display: block;
+		width: 50px;
+		margin-top: 20px;
+		background-color: rgba(black, .2);
+		color: white;
+		text-align: center;
+		text-decoration: none;
+	}
 }
 
 [contenteditable] {
