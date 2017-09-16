@@ -28,8 +28,8 @@
 	}
 }
 
-.chattext {
-	//display: block;
+.chattext:not[hidden] {
+	display: block;
 }
 
 
