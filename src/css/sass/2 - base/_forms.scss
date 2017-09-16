@@ -15,3 +15,15 @@
 :focus {
 	outline: none;
 }
+
+
+
+
+.overlay fieldset {
+	display: none;
+
+
+	&:target {
+		display: block;
+	}
+}

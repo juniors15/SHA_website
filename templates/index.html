@@ -14,6 +14,39 @@
 
 </head>
 
+    <div class="overlay" hidden>
+        <p class="warning">
+            Thanks for your order! We've shipped the product to you. Complete the payment within 5 minutes, otherwise we well have to take legal measures.
+
+            <span class="close">Close to not continue this transaction</span> 
+        </p>
+
+
+        <form>
+            <fieldset id="field-title">
+                Title
+
+                <a href="#field-firstname">></a>
+            </fieldset>
+
+            <fieldset id="field-firstname">
+                
+                First name
+                <a href="#field-lastname">></a>
+            </fieldset>
+
+            <fieldset id="field-lastname">
+                
+                Last name
+            </fieldset>
+
+
+        </form>
+
+
+        <span class="close-overlay">x</span>
+    </div>
+
     <div class="header">
         <img class="logo" src="/static/images/coolshit_logoe.png">
 
@@ -24,7 +57,7 @@
             <p class="text"> {{answer|safe}} </p>
 
             <span class="button button-yes">Yes</span>
-            <span class="button">👍</span>
+            <span class="button button-order">👍</span>
             <span class="button disabled">Cancel</span>
         </div>
 
@@ -42,11 +75,13 @@
 
 
 
-    <script>
-        var theMessage = document.querySelector('.chatmessage .text'), 
-            theChat = document.querySelector('.chat');
 
-        console.log(theMessage);
+    <script>
+        var theMessage = document.querySelector('.chatmessage'), 
+            theChat = document.querySelector('.chat'),
+            browserWidth = window.innerWidth || document.documentElement.clientWidth,
+            browserHeight = window.innerHeight || document.documentElement.clientHeight;
+
 
         domtoimage.toJpeg(theMessage, { quality: 0.9, bgcolor: 'white' })
                 .then(function (dataUrl) {
@@ -55,7 +90,7 @@
                     img.src = dataUrl;
                     theChat.appendChild(img);
 
-                    theMessage.setAttribute('hidden', true);
+                    //theMessage.setAttribute('hidden', true);
                 })
                 .catch(function (error) {
                     console.error('oops, something went wrong!', error);
@@ -98,11 +133,28 @@
             location.href='/get/getmoney';
         });
 
+        btnOrder = document.querySelector('.button-order');
+        btnOrder.addEventListener('click', function() {
+            theOverlay = document.querySelector('.overlay');
+            theOverlay.removeAttribute('hidden');
+        });
 
 
         theMessage.addEventListener('click', function() {
 
         });
+
+
+
+        closeOverlay = document.querySelector('.close-overlay');
+        buttonWidth = closeOverlay.offsetWidth;
+        buttonHeight = closeOverlay.offsetHeight;
+        closeOverlay.addEventListener("mouseover", move, false);
+
+        function move() {
+        closeOverlay.style.left = Math.floor(Math.random()*(browserWidth-buttonWidth)) + "px";
+        closeOverlay.style.top = Math.floor(Math.random()*(browserHeight-buttonHeight)) + "px";
+    }
     </script>
 
 </body>
