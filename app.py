@@ -19,16 +19,27 @@ def home():
 @app.route("/get/<string:query>/")
 def get_raw_response(query):
     answeeer=str(english_bot.get_response(query))
+    
     if "TV" in query:
-        im = random.randint(1, 5)
-        answeeer="Do you want to buy  this? <img src=\"\\static\\images\\TV"+str(im)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\"> <p> or this</p> <img src=\"\\static\\images\\TV"+str((im+1)%5)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\">"
         
-    if "buy" in query:
+        im = random.randint(1, 5)
+        im2 = random.randint(1, 5)
+        if im == im2:
+            im2 = im%5+1
+        answeeer="Do you want to buy  this? <img src=\"\\static\\images\\TV"+str(im)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\"> <p> or this</p> <img src=\"\\static\\images\\TV"+str(im2)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\">"
+        
+    if "getmoney" in query:
+
         answeeer="<img src=\"\\static\\images\\giphy.gif\" alt=\"Mountain View\" style=\"width:304px;height:228px;\"> "
 
-
+    if "stop" in query:
+        return render_template("page2.html",answer=answeeer)
 
     return render_template("index.html",answer=answeeer)
+
+@app.route("/get/")
+def get_raw_response_empty():
+    return render_template("index.html",answer="You type nothing IDIOT!")
 
 
 
