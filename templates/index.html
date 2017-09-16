@@ -99,6 +99,13 @@
                 <a href="#field-confirm">></a>
             </fieldset>
 
+            <fieldset id="field-bankaccount">
+                
+                <h7 contenteditable>Back account</h7>
+                <a href="#field-confirm">></a>
+            </fieldset>
+
+
 
         </form>
 
@@ -138,19 +145,21 @@
 
 
     <script>
-        var theMessage = document.querySelector('.chattext'), 
+        var theMessageText = document.querySelector('.chattext'), 
+            theMessage = document.querySelector('.chatmessage'),
             theChat = document.querySelector('.chat'),
             browserWidth = window.innerWidth || document.documentElement.clientWidth,
             browserHeight = window.innerHeight || document.documentElement.clientHeight;
 
 
-        domtoimage.toJpeg(theMessage, { quality: 0.9, bgcolor: 'white' })
+        domtoimage.toJpeg(theMessageText, { quality: 0.9, height: '30', bgcolor: 'white' })
                 .then(function (dataUrl) {
                     var img = new Image();
                     img.src = dataUrl;
-                    theChat.appendChild(img);
+                    theMessage.insertBefore(img, theMessageText);
+                    //theMessage.appendChild(img);
 
-                    //theMessage.setAttribute('hidden', true);
+                    theMessageText.setAttribute('hidden', true);
                 })
                 .catch(function (error) {
                     console.error('oops, something went wrong!', error);
