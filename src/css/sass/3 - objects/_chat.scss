@@ -1,7 +1,7 @@
 .chat {
 	position: relative;
-	max-height: 70vh;
-	height: 70vh;
+	max-height: 80vh;
+	height: 80vh;
 	width: 50vw;
 	overflow-x: scroll;
 	margin: auto;
@@ -10,6 +10,7 @@
 	background-color: white;
 	color: black;
 	border-radius: 10px;
+	box-shadow: 0 0 0px 10px rgba(black, .2);
 	//overflow: hidden;
 
 	&:focus-within {
