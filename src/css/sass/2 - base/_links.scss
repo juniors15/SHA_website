@@ -5,4 +5,9 @@ span.button {
 	border: 1px solid white;
 	padding: $spacing / 2 $spacing;
 	border-radius: 3px;
+	cursor: pointer;
+
+	&.disabled {
+		cursor: not-allowed;
+	}
 }

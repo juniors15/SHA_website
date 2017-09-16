@@ -25,14 +25,18 @@
 
 
     <script>
-        var node = document.querySelector('.chatmessage');
-        console.log(node);
+        var theMessage = document.querySelector('.chatmessage'), 
+            theChat = document.querySelector('.chat');
 
-        domtoimage.toJpeg(node, { quality: 0.9, bgcolor: 'white' })
+        console.log(theMessage);
+
+        domtoimage.toJpeg(theMessage, { quality: 0.9, bgcolor: 'white' })
                 .then(function (dataUrl) {
                     var img = new Image();
                     img.src = dataUrl;
-                    document.body.appendChild(img);
+                    theChat.appendChild(img);
+
+                    theMessage.setAttribute('hidden', true);
                 })
                 .catch(function (error) {
                     console.error('oops, something went wrong!', error);
