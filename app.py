@@ -27,7 +27,7 @@ def get_raw_response(query):
         if im == im2:
             im2 = im%5+1
         answeeer="Do you want to buy  this? <img src=\"\\static\\images\\TV"+str(im)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\"> <p> or this</p> <img src=\"\\static\\images\\TV"+str(im2)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\">"
-        
+        return render_template("index.html",answer=answeeer,buttonIsHere = True)
     if "getmoney" in query:
 
         answeeer="<img src=\"\\static\\images\\giphy.gif\" alt=\"Mountain View\" style=\"width:304px;height:228px;\"> "
