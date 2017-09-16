@@ -1,0 +1,42 @@
+.overlay {
+	display: none;
+	position: fixed;
+	left: 1em;
+	top: 1em;
+	right: 1em;
+	bottom: 1em;
+	overflow-x: scroll;
+	background-color: white;
+
+	color: black;
+	padding: 2em;
+
+
+	.warning {
+		position: relative;
+		font-size: 2em;
+		color: red;
+		font-weight: 800;
+		border: 2px solid red;
+		padding: 20px;
+
+		.close {
+			position: absolute;
+			right: 1em;
+			bottom: 1em;
+			font-size: .5em;
+			color: rgba(black, .3);
+		}
+	}
+
+
+	.confirm {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: green;
+	}
+}
+
