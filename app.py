@@ -34,6 +34,8 @@ def get_raw_response(query):
 
     if "stop" in query:
         return render_template("page2.html",answer=answeeer)
+    if "?" in query
+        answeer = "Stop asking question ACT or go to the Stupid Hackathon in Amsterdam"
 
     return render_template("index.html",answer=answeeer)
 
