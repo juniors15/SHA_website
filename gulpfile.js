@@ -21,7 +21,7 @@ gulp.task('bake', function () {
         end: '-->',
         removeTags: true
     }))
-    .pipe(gulp.dest('./public')); 
+    .pipe(gulp.dest('./templates')); 
 });
 
 gulp.task('sass', function () {
@@ -29,18 +29,18 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./public/css'))
+    .pipe(gulp.dest('./templates/css'))
     .pipe(minifyCss({
         keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./public/css'))
+    .pipe(gulp.dest('./templates/css'))
 }); 
 
 gulp.task('imagemin', () =>
     gulp.src('src/images/**/*.{png,jpg,gif}')
     .pipe(imagemin())
-    .pipe(gulp.dest('public/images'))
+    .pipe(gulp.dest('templates/images'))
 ); 
 
 gulp.task('watch', [], function() {
@@ -50,7 +50,7 @@ gulp.task('watch', [], function() {
 });
 
 gulp.task('webserver', function() {
-  gulp.src('./public')
+  gulp.src('./templates')
     .pipe(server({
       livereload: true,
       directoryListing: false,
