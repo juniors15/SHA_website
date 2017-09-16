@@ -1,7 +1,7 @@
 <!--(bake html_includes/head.html)-->
 
     <div class="header">
-        <img class="logo" src="./images/coolshit_logoe.png">
+        <img class="logo" src="/static/images/coolshit_logoe.png">
 
     </div>
 
@@ -22,7 +22,7 @@
             <input type="text" placeholder="Yes?">
             <!--span class="button">Ok</span-->
 
-            <audio src="./song/test.mp3" loop></audio>
+            <audio src="/static/song/test.mp3" loop></audio>
         </div>
     </div>
 
@@ -75,7 +75,7 @@
 
 
         function handleSubmit(theTarget) {
-            window.location('/get/'+theTarget.value); 
+            location.href='/get/'+theTarget.value;
         }
     </script>
 

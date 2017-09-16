@@ -29,18 +29,18 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./templates/css'))
+    .pipe(gulp.dest('./static/css'))
     .pipe(minifyCss({
         keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./templates/css'))
+    .pipe(gulp.dest('./static/css'))
 }); 
 
 gulp.task('imagemin', () =>
     gulp.src('src/images/**/*.{png,jpg,gif}')
     .pipe(imagemin())
-    .pipe(gulp.dest('templates/images'))
+    .pipe(gulp.dest('static/images'))
 ); 
 
 gulp.task('watch', [], function() {
@@ -50,7 +50,7 @@ gulp.task('watch', [], function() {
 });
 
 gulp.task('webserver', function() {
-  gulp.src('./templates')
+  gulp.src('./')
     .pipe(server({
       livereload: true,
       directoryListing: false,
