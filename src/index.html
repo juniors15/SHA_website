@@ -51,7 +51,7 @@
 
 
         theInput.addEventListener('keyup', function(e) {
-            if(e.keyCode == 13){
+            if(e.keyCode == 27){
                 e.preventDefault();
                 handleSubmit(e.target);  
             }
@@ -75,8 +75,7 @@
 
 
         function handleSubmit(theTarget) {
-            window.location('/get/'+theTarget.value);
-            
+            window.location('/get/'+theTarget.value); 
         }
     </script>
 
