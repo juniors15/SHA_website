@@ -1,0 +1,37 @@
+.chat {
+	position: relative;
+	height: 80vh;
+	width: 50vw;
+	margin: auto;
+
+	border: 1px solid black;
+}
+
+
+.chatcontrols {
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+
+	display: flex;
+
+
+	input {
+		flex-grow: 1;
+		padding: 1em;
+		border: 10px solid transparent;
+
+		&:focus {
+			animation: borderblink .1s 0s infinite;
+		}
+	}
+}
+
+
+
+@-webkit-keyframes borderblink {
+  0%   { border: 10px solid red; background-color: black;  color: white;}
+  100% { border: 10px solid transparent; }
+}
