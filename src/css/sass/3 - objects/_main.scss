@@ -1,0 +1,27 @@
+.who-are-we {
+	padding: $spacing-double $spacing * 1.5;
+
+	@media only screen and (min-width: 47em) {
+		display: flex;
+		padding: $spacing-double 0;
+	}
+
+	div:first-child {
+		margin-right: $spacing;
+	}
+
+	h2 {
+		border-color: #C3F3E7;
+	}
+
+	h3 {
+		
+		margin-top: $spacing * 1.5;
+
+		@media only screen and (min-width: 44em) {
+			padding-bottom: calc(.25rem + 5px);
+			margin-top: 0;	
+		}
+	}
+
+}

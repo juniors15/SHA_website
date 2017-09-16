@@ -1,0 +1,463 @@
+@charset "UTF-8";
+/*------------------------------------*    STYLE.SCSS
+\*------------------------------------*/
+/**
+ * Here we start to pull everything together into one big stylesheet.
+ *
+ * SETUP............Settings, tools, mixins, etc.
+ * GENERIC..........normalize.css, reset, shared styles, etc.
+ * BASE.............Basic HTML elements.
+ * OBJECTS..........Objects, abstractions, design patterns.
+ * GUI..............Components and modules.
+ * TRUMPS...........Helpers, overrides, ‘trump-cards’.
+ */
+/*------------------------------------*    #SETUP
+\*------------------------------------*/
+/**
+ * Settings, variables and tools.
+ */
+/*------------------------------------*    #SETTINGS
+\*------------------------------------*/
+/**
+ * Pull in all the settings we require for this project.
+ */
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ * 
+   `@include vendor(border-radius, 4px);`
+ * 
+ */
+/*------------------------------------*    #GENERIC
+\*------------------------------------*/
+/**
+ * These are far reaching styles that affect and underpin every element on the
+ * page, e.g. `* {}`.
+ */
+/*------------------------------------*    #GENERIC
+\*------------------------------------*/
+/**
+ * Pull in all our generic styles, e.g. resets.
+ */
+img {
+  max-width: 100%; }
+
+/*------------------------------------*    #BASE
+\*------------------------------------*/
+/**
+ * These are base HTML elements, things with no classes on them, e.g. `h1 {}`,
+ * `blockquote {}`.
+ */
+/*------------------------------------*    #BASE
+\*------------------------------------*/
+/**
+ * Pull in all the base files we want.
+ */
+html {
+  min-height: 100vh; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+main > div {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 3em 1em; }
+  @media only screen and (min-width: 30em) {
+    main > div {
+      padding: 3em; } }
+
+body {
+  font-family: 'Dosis', sans-serif;
+  color: black;
+  font-size: .875em;
+  line-height: 1.4; }
+
+h1, h2, h3, h4 {
+  margin: 0 0 1em 0;
+  border-bottom: 4px solid white;
+  font-style: normal;
+  font-weight: 800; }
+
+h1 {
+  font-size: 3.7rem;
+  border-bottom: none;
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: .5em; }
+  h1 span {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    display: block;
+    text-transform: lowercase;
+    font-variant: small-caps; }
+
+h1 + p {
+  margin-top: 0;
+  font-size: 1.286em;
+  font-style: normal;
+  font-weight: 300; }
+
+h2 {
+  margin: 0.35rem 2rem;
+  font-size: 2em;
+  font-weight: 300; }
+  h2 span {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    line-height: 1.6rem;
+    display: block;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-weight: 100; }
+
+section > h2 {
+  font-size: 3em; }
+
+ul {
+  padding-left: 0.1em;
+  list-style-type: square;
+  list-style-position: inside; }
+
+li + li {
+  margin-top: .5rem; }
+
+.programma {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+  .programma li {
+    position: relative;
+    margin-left: 0;
+    padding-bottom: 2em;
+    padding-left: 5rem; }
+  .programma h3 {
+    border-bottom: none; }
+  .programma span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    background-color: white;
+    padding: .1rem .2rem;
+    border-radius: 2px; }
+
+a {
+  color: black;
+  text-decoration: underline; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid black;
+  margin: 2.8rem 0;
+  transform: scale(3); }
+  table th, table td {
+    padding: 0.35rem 0;
+    width: 50%;
+    border-bottom: 1px solid black; }
+  table th {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1em; }
+
+/*------------------------------------*    #OBJECTS
+\*------------------------------------*/
+/**
+ * These are design-free objects, abstractions and design patterns. These create
+ * constructs that you lay your designs over.
+ */
+/*------------------------------------*    #OBJECTS
+\*------------------------------------*/
+/**
+ * Pull in all our objects and abstractions.
+ */
+/* Component Styling */
+.ac-slideshow {
+  position: relative;
+  padding: 0;
+  max-width: none; }
+  @media only screen and (min-width: 60em) {
+    .ac-slideshow {
+      display: flex;
+      width: 100%;
+      overflow-x: scroll;
+      overflow-y: hidden; } }
+
+img {
+  width: 100%; }
+
+.ac-ss-slide {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 100%; }
+
+.ac-ss-slide[aria-hidden="true"] {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity .2s ease-in; }
+
+.ac-ss-slide {
+  position: relative; }
+
+.ac-ss-toc {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  margin: 0;
+  background-color: #e02440; }
+  @media only screen and (min-width: 60em) {
+    .ac-ss-toc {
+      position: absolute;
+      bottom: 1.4rem;
+      right: 2.8rem;
+      display: block;
+      z-index: 2;
+      list-style: none;
+      margin: 0 0;
+      padding: 0;
+      text-align: center;
+      background-color: transparent; } }
+
+.ac-ss-toc li {
+  display: inline-block;
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 40%; }
+
+.ac-ss-toc a {
+  display: block;
+  padding: 0.7rem 0.35rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: .7em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  @media only screen and (min-width: 60em) {
+    .ac-ss-toc a {
+      display: inline-block;
+      background-color: black;
+      border: 3px solid rgba(255, 255, 255, 0);
+      border-radius: 50%;
+      padding: .5em;
+      height: 4.9rem;
+      width: 4.9rem;
+      transition: border-color .1s ease-in; } }
+
+.ac-ss-toc a.is-active, .ac-ss-toc a:hover, .ac-ss-toc a:focus {
+  background-color: white; }
+
+@media only screen and (min-width: 60em) {
+  .ac-ss-toc a span {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    transform: translateX(-50%) translateY(20%); } }
+
+@media only screen and (min-width: 60em) {
+  .ac-ss-toc li:not(:last-child) {
+    margin-right: 1em; } }
+
+main h1 + p::first-line {
+  font-weight: 700; }
+
+section h2 + p {
+  font-size: 1.2em;
+  margin-bottom: 0.7rem; }
+
+article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  margin-top: 1.4rem;
+  padding: 2.8rem 0 0; }
+  article h3 {
+    font-size: 2.143em;
+    line-height: 2rem;
+    font-weight: 400; }
+  article > .ac-slideshow {
+    order: -1;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.4rem; }
+  article aside {
+    color: black;
+    margin-top: 2.8rem;
+    padding-top: 2.8rem;
+    border-top: 1px solid black; }
+    article aside h4 {
+      margin-bottom: 0; }
+    article aside p {
+      margin-top: 0;
+      margin-bottom: 0.7rem; }
+  @media screen and (min-width: 40em) {
+    article {
+      flex-direction: row; }
+      article .ac-slideshow {
+        flex: 0 0 66%;
+        max-width: 66%;
+        align-self: flex-start;
+        margin-right: 1.4rem; } }
+  article > a:last-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 0.2333333333rem;
+    font-size: .8em;
+    text-transform: lowercase;
+    text-decoration: none; }
+    article > a:last-child::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -6px;
+      width: 0;
+      height: 0;
+      border-bottom: 6px solid black;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent; }
+
+.mustsee::after {
+  content: '';
+  position: absolute;
+  left: 1.4rem;
+  top: 2.8rem;
+  height: 2.1rem;
+  width: 1.4rem;
+  background-color: #fdbe20; }
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: 1.4rem;
+  top: 2.8rem;
+  height: 2.1rem;
+  width: 1.4rem;
+  background-color: black; }
+
+.durationSelector {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0 0 0.7rem;
+  margin-top: 2.8rem; }
+  .durationSelector ol {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 1.4rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  .durationSelector li {
+    margin: 0;
+    padding: 0; }
+  .durationSelector a {
+    display: block;
+    padding: 1.4rem 1.4rem;
+    border: 1px solid black;
+    border-radius: 40%;
+    max-width: 160px;
+    text-align: center;
+    text-decoration: none; }
+    .durationSelector a span {
+      display: block; }
+    .durationSelector a.is-active {
+      background-color: black;
+      color: white; }
+      .durationSelector a.is-active span {
+        color: #fdbe20; }
+
+.map {
+  padding-bottom: 2.8rem;
+  border-bottom: 3px solid #fdbe20; }
+  .map .legend {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.7rem 0; }
+  .map .legend__mustsee {
+    margin-right: 1.4rem; }
+    .map .legend__mustsee::before {
+      content: '';
+      display: inline-block;
+      height: 1.4rem;
+      width: 1.4rem;
+      margin-right: 0.7rem;
+      background-color: #e02440; }
+  .map .legend__highlight::before {
+    content: '';
+    display: inline-block;
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-right: 0.7rem;
+    background-color: black; }
+
+#map_main {
+  min-height: 25em;
+  margin-left: -4em;
+  margin-right: -4em; }
+
+[role="banner"] {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+  padding: 1.4rem;
+  border-bottom: 1px solid black; }
+  [role="banner"] span {
+    padding: 0; }
+  [role="banner"] nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  [role="banner"] nav li {
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0 0 0 4.2rem; }
+
+/*------------------------------------*    #GUI
+\*------------------------------------*/
+/**
+ * These are your components and modules; things like buttons, accordions,
+ * carousels, etc.
+ */
+/*------------------------------------*    #GUI
+\*------------------------------------*/
+/**
+ * Pull in all our GUI components.
+ */
+/*
+@import "";
+
+*/
+/*------------------------------------*    #TRUMPS
+\*------------------------------------*/
+/**
+ * These are helper classes and overrides that should take precedence over all
+ * other styles, e.g. `.float--left {}`.
+ */
+/*------------------------------------*    #TRUMPS
+\*------------------------------------*/
+/**
+ * Pull in all our trumps and overrides.
+ */
+/*
+@import "";
+
+
+*/

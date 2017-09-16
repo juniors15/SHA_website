@@ -1,0 +1,23 @@
+{
+  "name": "stupid-hackathon",
+  "version": "1.0.0",
+  "description": "stupid-hackathon",
+  "dependencies": {},
+  "author": ".",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-bake": "^1.0.0",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-inject-partials": "^1.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-watch": "^4.3.11"
+  }
+}
