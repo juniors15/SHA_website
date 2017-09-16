@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+import random
 
 app = Flask(__name__)
 
@@ -19,10 +20,12 @@ def home():
 def get_raw_response(query):
     answeeer=str(english_bot.get_response(query))
     if "TV" in query:
-    	answeeer="Do you want to buy an Xbox"
-
+        im = random.randint(1, 5)
+        answeeer="Do you want to buy  this? <img src=\"\\static\\images\\TV"+str(im)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\"> <p> or this</p> <img src=\"\\static\\images\\TV"+str((im+1)%5)+".jpg\" alt=\"Mountain View\" style=\"width:304px;height:228px;\">"
+        
     if "buy" in query:
-        answeeer="💸💳"
+        answeeer="<img src=\"\\static\\images\\giphy.gif\" alt=\"Mountain View\" style=\"width:304px;height:228px;\"> "
+
 
 
     return render_template("index.html",answer=answeeer)
