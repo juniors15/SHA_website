@@ -140,7 +140,7 @@
             browserHeight = window.innerHeight || document.documentElement.clientHeight;
 
 
-        domtoimage.toJpeg(theMessageText, { quality: 0.9, height: '30', bgcolor: 'white' })
+        domtoimage.toJpeg(theMessageText, { quality: 0.9, height: '36', bgcolor: 'white' })
                 .then(function (dataUrl) {
                     var img = new Image();
                     img.src = dataUrl;

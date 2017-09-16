@@ -1,10 +1,11 @@
 
 span.button {
-	background: rgb(237,103,27);
+	//display: inline-block;
+	background: rgb(237,103,27) linear-gradient(transparent, rgba(black, .1));
 	color: white;
 	border: 1px solid white;
-	padding: $spacing / 2 $spacing;
-	border-radius: 3px;
+	padding: $spacing / 4 $spacing * 2;
+	border-radius: 4px;
 	cursor: pointer;
 
 	&.disabled {

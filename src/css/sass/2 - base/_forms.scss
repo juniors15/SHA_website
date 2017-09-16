@@ -20,6 +20,7 @@
 
 
 .overlay fieldset {
+	text-align: right;
 	border: none;
 	display: none;
 	width: 50vw;
@@ -32,11 +33,11 @@
 
 
 	a:last-child {
-		display: block;
+		display: inline-block;
 		width: 50px;
-		padding: 20px 40px;
+		//padding: 20px 40px;
 		margin-top: 20px;
-		background-color: rgba(black, .2);
+		background-color: rgb(0,144,227);
 		color: white;
 		text-align: center;
 		text-decoration: none;
@@ -44,12 +45,23 @@
 		font-weight: bold;
 		border-radius: 3px;
 	}
+
+	button {
+		display: block;
+		background: rgb(237,103,27) linear-gradient(transparent, rgba(black, .1));
+		color: white;
+		border: 1px solid white;
+		padding: $spacing / 2 $spacing * 2;
+		border-radius: 4px;
+		cursor: pointer;
+	}
 }
 
-[contenteditable] {
+select, [contenteditable] {
 	display: block;
 	border: 1px solid black;
 	padding: 10px;
 	border-radius: 2px;
+	text-align: left;
 
 }

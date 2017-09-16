@@ -26,6 +26,10 @@
 	:first-child {
 
 	}
+
+	img, .chattext {
+		margin-bottom: 10px;
+	}
 }
 
 .chattext:not[hidden] {
@@ -63,7 +67,8 @@
 
 
 @-webkit-keyframes borderblink {
-  0%   { border: 10px solid red; background-color: black;  color: white;}
+  0%   { border: 10px solid rgb(237,103,27); background-color: black;  color: white;}
+  50%   { background-color: black;  color: white;}
   100% { border: 10px solid transparent; }
 }
 
