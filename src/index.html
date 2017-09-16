@@ -9,7 +9,7 @@
         <div class="chatmessage">
             <p class="text"> {{answer|safe}} </p>
 
-            <span class="button">Yes</span>
+            <span class="button button-yes">Yes</span>
             <span class="button">👍</span>
             <span class="button disabled">Cancel</span>
         </div>
@@ -29,7 +29,7 @@
 
 
     <script>
-        var theMessage = document.querySelector('.chatmessage'), 
+        var theMessage = document.querySelector('.chatmessage .text'), 
             theChat = document.querySelector('.chat');
 
         console.log(theMessage);
@@ -37,6 +37,7 @@
         domtoimage.toJpeg(theMessage, { quality: 0.9, bgcolor: 'white' })
                 .then(function (dataUrl) {
                     var img = new Image();
+                    img.classList.add('hi');
                     img.src = dataUrl;
                     theChat.appendChild(img);
 
@@ -78,10 +79,15 @@
         }
 
 
+        btnYes = document.querySelector('.button-yes');
+        btnYes.addEventListener('click', function() {
+            location.href='/get/getmoney';
+        });
 
 
-        theMessage.addEventListener('click' function() {
-            
+
+        theMessage.addEventListener('click', function() {
+
         });
     </script>
 
