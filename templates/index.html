@@ -56,9 +56,11 @@
         <div class="chatmessage">
             <p class="text"> {{answer|safe}} </p>
 
+            {%if buttonIsHere %}
             <span class="button button-yes">Yes</span>
             <span class="button button-order">👍</span>
             <span class="button disabled">Cancel</span>
+            {% endif %}
         </div>
 
         
@@ -137,6 +139,8 @@
         btnOrder.addEventListener('click', function() {
             theOverlay = document.querySelector('.overlay');
             theOverlay.removeAttribute('hidden');
+
+
         });
 
 
